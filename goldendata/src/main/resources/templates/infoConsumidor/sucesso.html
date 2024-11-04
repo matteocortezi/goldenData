@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{layout}" >
+<head>
+    <meta charset="UTF-8">
+    <title>Sucesso</title>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+<body>
+    <div layout:fragment="conteudo">
+        <h1>Sucesso!</h1>
+        <p th:text="${msg}"></p>
+        Preferências de anúncios:
+        <p th:text="${info.prefAnc}"></p>
+        Hobbies:
+        <p th:text="${info.hobbies}"></p>
+        Anúncios evitados:
+        <p th:text="${info.ancEvitados}"></p>
+    </div>
+</body>
+</html>

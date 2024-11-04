@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title th:text="${title}">Golden Data MVC</title>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+</head>
+<body>
+
+
+<header class="bg-primary text-white p-3">
+    <h1 style="display: inline;">Golden Data</h1>
+    <nav style="display: inline; float: right;">
+        <a href="home" th:href="@{/home}" class="text-white">Home</a> |
+        <a href="cadastro-consumidor/cadastrar" th:href="@{/cadastro-consumidor/cadastrar}" class="text-white">Cadastro</a> |
+        <a href="info-consumidor/cadastrar" th:href="@{/info-consumidor/cadastrar}" class="text-white">Gerenciar preferências de anúncios</a>
+    </nav>
+</header>
+
+
+<div class="container mt-4">
+    <div layout:fragment="conteudo">
+
+    </div>
+</div>
+
+
+
+
+
+
+<script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+<script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</body>
+</html>

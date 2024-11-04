@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar Consumidor</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container" layout:fragment="conteudo">
+    <h1>Editar Consumidor</h1>
+    <form th:action="@{/cadastro-consumidor/atualizar(id=${consumidor.idCons})}" th:object="${consumidor}" method="post">
+        <div class="form-group">
+            <label for="nmCons">Nome:</label>
+            <input type="text" id="nmCons" th:field="*{nmCons}" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label for="dtNascCons">Data de Nascimento:</label>
+            <input type="date" id="dtNascCons" th:field="*{dtNascCons}" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label for="emlCons">Email:</label>
+            <input type="email" id="emlCons" th:field="*{emlCons}" class="form-control" required/>
+        </div>
+        <div class="form-group">
+            <label for="genCons">Gênero:</label>
+            <select id="genCons" th:field="*{genCons}" class="form-control" required>
+                <option value="Masculino">Masculino</option>
+                <option value="Feminino">Feminino</option>
+                <option value="Outro">Outro</option>
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Atualizar</button>
+        <a href="/cadastro-consumidor/listar" class="btn btn-secondary">Cancelar</a>
+    </form>
+</div>
+</body>
+</html>

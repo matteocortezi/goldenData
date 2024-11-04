@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro de consumidores</title>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+</head>
+<body>
+<div layout:fragment="conteudo" class="container mt-5">
+    <h1>Cadastro de consumidores</h1>
+    <form action="/cadastro-consumidor/cadastrar" method="post">
+        <div class="form-group mb-3">
+            Digite o seu e-mail:
+            <input type="text" class="form-control" name="emlCons" placeholder="ex: mateusdev@fiap.com ">
+        </div>
+        <div class="form-group mb-3">
+            Digite o seu nome:
+            <input type="text" class="form-control" name="nmCons" placeholder="ex: Mateus Silva ">
+        </div>
+        <div class="form-group mb-3">
+            Digite o seu gênero:
+            <input type="text" class="form-control" name="genCons" placeholder="ex: Masculino">
+        </div>
+        <div class="form-group mb-3">
+            Digite sua data de nascimento:
+            <input type="text" class="form-control" name="dtNascCons" placeholder="no formato: xxxx-xx-xx ">
+        </div>
+        <div class="form-group">
+            <input type="submit" class="btn btn-primary" value="Cadastrar consumidor">
+        </div>
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{layout}">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Cadastro das informações sobre os consumidores</title>
+    <link th:href="@{/webjars/bootstrap/css/bootstrap.min.css}" rel="stylesheet"/>
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+<body>
+<div layout:fragment="conteudo" class="container mt-4">
+    <h1>Cadastro de preferências de anúncios</h1>
+    <form action="/info-consumidor/cadastrar" method="post">
+        <div class="mb-3">
+            Quais são suas preferências de anúncio?
+            <input type="text" name="prefAnc" class="form-control" placeholder="ex: Carros">
+        </div>
+        <div class="mb-3">
+            Quais são seus hobbies?
+            <input type="text" name="hobbies" class="form-control" placeholder="ex: Pesca">
+        </div>
+        <div class="mb-3">
+            Quais anúncios você gostaria de evitar?
+            <input type="text" name="ancEvitados" class="form-control" placeholder="ex: Bebidas">
+        </div>
+        <div class="mb-3">
+            Você costuma fazer compras online?
+            <input type="text" name="cmpOn" class="form-control" placeholder="S = Sim | N = Não">
+        </div>
+        <input type="submit" class="btn btn-primary" value="Cadastrar suas preferências de anúncio">
+    </form>
+</div>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Lista de Consumidores</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+<div class="container" layout:fragment="conteudo">
+    <h1>Lista de Consumidores</h1>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>ID</th>
+            <th>Email</th>
+            <th>Nome</th>
+            <th>Gênero</th>
+            <th>Data de Nascimento</th>
+            <th>Ações</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="consumidor : ${consumidores}">
+            <td th:text="${consumidor.idCons}">ID</td>
+            <td th:text="${consumidor.emlCons}">Email</td>
+            <td th:text="${consumidor.nmCons}">Nome</td>
+            <td th:text="${consumidor.genCons}">Gênero</td>
+            <td th:text="${#temporals.format(consumidor.dtNascCons, 'dd/MM/yyyy')}">Data de Nascimento</td>
+            <td>
+                <a th:href="@{/cadastro-consumidor/editar/{id}(id=${consumidor.idCons})}" class="btn btn-warning btn-sm">Editar</a>
+                <form th:action="@{/cadastro-consumidor/deletar/{id}(id=${consumidor.idCons})}" method="post" style="display:inline;">
+                    <button type="submit" class="btn btn-danger btn-sm" onclick="return confirm('Tem certeza que deseja deletar?')">Deletar</button>
+                </form>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
